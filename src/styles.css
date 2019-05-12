@@ -1,0 +1,195 @@
+html {
+  position: relative;
+  min-height: 100%;
+  overflow : auto;
+}
+body {
+ /*  background-image: url('./images/webbg.jpg') !important; */
+  background-size: cover !important;
+}
+.Site-content{
+  
+}
+.footer {
+  height: auto !important;
+  width: 100%;
+  overflow:hidden;
+}
+#Homediv .classList, #my_courses{
+  padding: 100px !important;
+}
+.logo{
+  width: 55px !important;
+  height: 48px;
+}
+.ui.card>.image, .ui.cards>.card>.image{
+  width: 450px;
+    height: 210px;
+}
+#popular_courses .ui.card, #my_courses .ui.card, #popular_courses .ui.cards>.card, #courseList .ui.card,#courseList .ui.cards>.card{
+  width: auto;
+  height: 345px !important;
+}
+.ui.grid>.row>.column{
+  margin: 10px 0 !important; 
+}
+#popular_courses h3,  #courseList h3{
+  color: #5f9ea0 !important;
+  font-weight: bold; 
+}
+.footer {
+  position: relative;
+  margin: 0px;
+  height: 70px;
+  clear: both;
+  padding-top: 2% !important;
+}
+#LoginCard, #SignUpCard, #editUser, #editTheme{
+  display: table;
+  margin: 5% auto;
+  width:800px;
+}
+#cardHeader{
+  background: #5f9ea0;
+  color: #fff !important;
+}
+.button{
+  background: #5f9ea0 !important;
+  color: #fff !important;
+}
+
+#courseDetails {
+  display: table;
+  margin: 5% auto;
+  width: 95%;
+}
+#courseHeader, #courseDesc{
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0 0 20px 0;
+  border: 1px solid #ccc;
+  background:#fff;
+}
+
+#HometopContainer{
+  background-image: url('images/home.jpg');
+  background-size: cover !important;
+  height: 400px;
+  background-color:black;
+  width: auto !important;
+
+}
+#aboutUsdiv .image{
+  size: cover !important;
+  height:250px;
+  width: auto !important;
+}
+#searchHome{
+  padding: 10%;
+  color: #fff;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#searchHome .ui.grid .column{
+  margin: 0 auto;
+}
+#allCourses, #aboutUsdiv{
+  margin: 3% !important;
+}
+.links{
+  color: #5f9ea0 !important;
+  font-weight: bold; 
+}
+#courseContainer .ui.vertical.menu{
+  width: 100% !important;
+}
+
+#courseContainer .courseSubmenu, #courseContainer .ui.vertical.menu{
+  border: none !important;
+  box-shadow: none !important;
+}
+#courseContainer .ui.styled.accordion .content{
+  padding: 0 !important;
+}
+#courseContainer .ui.styled.accordion{
+  height: 100% !important;
+  background: #ececec !important;
+}
+#courseContainer .active{
+  border-bottom: 1px solid rgba(34,36,38,.15);
+
+}
+.checkmark{
+  color: green !important;
+}
+#courseContainer{
+  margin:3%;
+}
+.heading{
+  color: #5f9ea0 !important;
+  font-weight: bold; 
+}
+#newCourse{
+  width:75%;
+  padding: 55px;
+}
+#membersContainer{
+  margin: 5%;
+  width: 95%;
+}
+#assessmentDiv {
+  margin: 5%;
+  width: 90%;
+}
+#membersList, #newCourseForm, #uploadSection{
+ border:1px solid #ccc;
+ padding: 3%;
+ border-radius: 5px;
+ background: #fff;
+ margin:2%;
+}
+#newSection{
+  background: #ececec !important;
+  padding: 2%;
+}
+#newSection input{
+  width:500px !important;
+}
+#newSection .ui.basic.label{
+  background: transparent;
+}
+.centerData{
+  text-align: center !important;
+  margin-bottom: 10px !important;
+}
+.ui.divided.grid:not([class*="vertically divided"])>.column:not(.row), .ui.divided.grid:not([class*="vertically divided"])>.row>.column{
+  box-shadow: none !important; 
+}
+#aboutUsContainer{
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 25px;
+  background: #fff;
+
+}
+#registerCard{
+  height: 462px !important;
+}
+#registerCard.ui.card, #registerCard.ui.cards>.card{
+  width: 390px !important;
+}
+#registerCard.ui.card>.image{
+  height: 306px;
+}
+
+#ContactCard{
+  margin: 0 auto;
+  width: 66%;
+}
+#ContactCard .field{
+  width: 70%;
+}
+.errorDiv{
+  height: 400px;
+  margin: 3%;
+}
