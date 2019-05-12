@@ -1,5 +1,5 @@
 const path = require('path');
-const SRC_DIR = path.join(__dirname, 'src');
+const SRC_DIR = path.join(__dirname, 'app');
 const DIST_DIR = path.join(__dirname, 'dist');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')

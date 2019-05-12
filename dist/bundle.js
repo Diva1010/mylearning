@@ -1389,7 +1389,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 URL = {
 
-  APIURL: 'http://localhost:8080'
+  apiurl: '/public'
 };
 exports.default = URL;
 
@@ -21992,7 +21992,7 @@ var PopularCourses = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            fetch(_environment2.default.apiurl + ('/server/api/courselist.php?popular=' + encodeURIComponent('1')), {
+            fetch(_environment2.default.apiurl + ('/courselist.php?popular=' + encodeURIComponent('1')), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -23952,7 +23952,7 @@ var HomePage = function (_Component) {
         value: function componentWillMount() {
             var _this2 = this;
 
-            fetch(_environment2.default.apiurl + ('/server/api/courselist.php?type=' + encodeURIComponent('Technology')), {
+            fetch(_environment2.default.apiurl + ('/courselist.php?type=' + encodeURIComponent('Technology')), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -61411,7 +61411,7 @@ var Login = function (_React$Component) {
             localStorage.clear();
             var loginBody = JSON.stringify({ username: this.state.username, password: this.state.password });
             if (this.state.username && this.state.password) {
-                fetch(_environment2.default.apiurl + '/server/api/login.php', {
+                fetch(_environment2.default.apiurl + '/login.php', {
                     method: 'POST',
                     body: loginBody
                 }).then(function (response) {
@@ -61555,7 +61555,7 @@ var SignUp = function (_React$Component) {
             var _this2 = this;
 
             e.preventDefault();
-            fetch(_environment2.default.apiurl + ('/server/api/updateUser.php?type=' + encodeURIComponent('register')), {
+            fetch(_environment2.default.apiurl + ('/updateUser.php?type=' + encodeURIComponent('register')), {
                 method: 'POST',
                 body: JSON.stringify({ firstname: this.state.fname,
                     lastname: this.state.lname,
@@ -61704,7 +61704,7 @@ var CourseDetails = function (_Component) {
             var _this2 = this;
 
             this.state.courseId = this.props.location.query.courseId;
-            fetch(_environment2.default.apiurl + ('/server/api/coursedetails.php?courseId=' + encodeURIComponent(this.state.courseId)), {
+            fetch(_environment2.default.apiurl + ('/coursedetails.php?courseId=' + encodeURIComponent(this.state.courseId)), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -61731,7 +61731,7 @@ var CourseDetails = function (_Component) {
 
             var user = JSON.parse(localStorage.getItem('user'));
             if (user) {
-                fetch(_environment2.default.apiurl + ('/server/api/registercourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&stuId=' + encodeURIComponent(user.stuId)), {
+                fetch(_environment2.default.apiurl + ('/registercourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&stuId=' + encodeURIComponent(user.stuId)), {
                     method: 'GET'
                 }).then(function (response) {
                     if (response.ok) {
@@ -61899,7 +61899,7 @@ var UserCourses = function (_Component) {
 
             var user = JSON.parse(localStorage.getItem('user'));
             var postbody = JSON.stringify({ stuId: user.stuId, type: 'view' });
-            fetch(_environment2.default.apiurl + '/server/api/usercourses.php', {
+            fetch(_environment2.default.apiurl + '/usercourses.php', {
                 method: 'POST',
                 body: postbody
             }).then(function (response) {
@@ -62041,13 +62041,13 @@ var ViewCourse = function (_Component) {
             var _this2 = this;
 
             this.state.courseId = this.props.location.query.courseId;
-            fetch(_environment2.default.apiurl + ('/server/api/viewcourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&type=' + encodeURIComponent('section')), {
+            fetch(_environment2.default.apiurl + ('/viewcourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&type=' + encodeURIComponent('section')), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
                     response.json().then(function (json) {
                         _this2.setState({ courseSections: json });
-                        fetch(_environment2.default.apiurl + ('/server/api/viewcourse.php?courseId=' + encodeURIComponent(_this2.state.courseId) + '&section=' + encodeURIComponent(_this2.state.courseSections[0].section) + '&type=' + encodeURIComponent('subsection')), {
+                        fetch(_environment2.default.apiurl + ('/viewcourse.php?courseId=' + encodeURIComponent(_this2.state.courseId) + '&section=' + encodeURIComponent(_this2.state.courseSections[0].section) + '&type=' + encodeURIComponent('subsection')), {
                             method: 'GET'
                         }).then(function (response) {
                             if (response.ok) {
@@ -62068,7 +62068,7 @@ var ViewCourse = function (_Component) {
             var user = JSON.parse(localStorage.getItem('user'));
             var postbody = JSON.stringify({ stuId: user.stuId, subsecId: this.state.subSectionId, type: 'update' });
             this.video.addEventListener('ended', function (e) {
-                fetch(_environment2.default.apiurl + '/server/api/usercourses.php', {
+                fetch(_environment2.default.apiurl + '/usercourses.php', {
                     method: 'POST',
                     body: postbody
                 }).then(function (response) {
@@ -62087,7 +62087,7 @@ var ViewCourse = function (_Component) {
             var activeIndex = this.state.activeIndex;
 
             var newIndex = activeIndex === index ? -1 : index;
-            fetch(_environment2.default.apiurl + ('/server/api/viewcourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&section=' + encodeURIComponent(titleProps.children) + '&type=' + encodeURIComponent('subsection')), {
+            fetch(_environment2.default.apiurl + ('/viewcourse.php?courseId=' + encodeURIComponent(this.state.courseId) + '&section=' + encodeURIComponent(titleProps.children) + '&type=' + encodeURIComponent('subsection')), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -62401,7 +62401,7 @@ var ContactUs = function (_Component) {
         key: 'handleSubmit',
         value: function handleSubmit(e) {
             e.preventDefault();
-            fetch(_environment2.default.apiurl + '/server/api/contactus.php', {
+            fetch(_environment2.default.apiurl + '/contactus.php', {
                 method: 'POST',
                 body: JSON.stringify({ subject: this.state.subject,
                     email: this.state.email,
@@ -62539,7 +62539,7 @@ var AllCourses = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var url = _environment2.default.apiurl + ('/server/api/courselist.php?type=' + encodeURIComponent('Technology'));
+            var url = _environment2.default.apiurl + ('/courselist.php?type=' + encodeURIComponent('Technology'));
             fetch(url, {
                 method: 'GET'
             }).then(function (response) {
@@ -62558,7 +62558,7 @@ var AllCourses = function (_Component) {
             var name = _ref.name;
 
             this.setState({ courseList: [] });
-            fetch(_environment2.default.apiurl + ('/server/api/courselist.php?type=' + encodeURIComponent(name)), {
+            fetch(_environment2.default.apiurl + ('/courselist.php?type=' + encodeURIComponent(name)), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -62824,7 +62824,7 @@ var AddNewcourse = function (_Component) {
                     'content-type': 'multipart/form-data'
                 }
             };
-            fetch(_environment2.default.apiurl + '/server/api/newcourse.php', {
+            fetch(_environment2.default.apiurl + '/newcourse.php', {
                 method: 'POST',
                 body: formData,
                 config: config
@@ -62976,7 +62976,7 @@ var MemberList = function (_React$Component) {
 
             var user = JSON.parse(localStorage.getItem('user'));
             this.setState({ userrole: user.userrole });
-            fetch(_environment2.default.apiurl + '/server/api/userList.php', {
+            fetch(_environment2.default.apiurl + '/userList.php', {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -63005,12 +63005,12 @@ var MemberList = function (_React$Component) {
         value: function confirmDelete() {
             var _this3 = this;
 
-            fetch(_environment2.default.apiurl + ('/server/api/updateUser.php?type=' + encodeURIComponent('delete') + '&stuId=' + encodeURIComponent(this.state.userId)), {
+            fetch(_environment2.default.apiurl + ('/updateUser.php?type=' + encodeURIComponent('delete') + '&stuId=' + encodeURIComponent(this.state.userId)), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
                     _this3.setState({ open: false });
-                    fetch(_environment2.default.apiurl + '/server/api/userList.php', {
+                    fetch(_environment2.default.apiurl + '/userList.php', {
                         method: 'GET'
                     }).then(function (response) {
                         if (response.ok) {
@@ -63166,7 +63166,7 @@ var UploadSection = function (_Component) {
                     'content-type': 'multipart/form-data'
                 }
             };
-            fetch(_environment2.default.apiurl + '/server/api/uploadsection.php', {
+            fetch(_environment2.default.apiurl + '/uploadsection.php', {
                 method: 'POST',
                 body: formData,
                 config: config
@@ -63323,7 +63323,7 @@ var Assessment = function (_Component) {
             var _this2 = this;
 
             if (this.state.userrole == 'student') {
-                fetch(_environment2.default.apiurl + ('/server/api/assessment.php?courseId=' + encodeURIComponent(this.state.courseId) + '&user=' + encodeURIComponent('student') + '&userId=' + encodeURIComponent(this.state.stuId)), {
+                fetch(_environment2.default.apiurl + ('/assessment.php?courseId=' + encodeURIComponent(this.state.courseId) + '&user=' + encodeURIComponent('student') + '&userId=' + encodeURIComponent(this.state.stuId)), {
                     method: 'GET'
                 }).then(function (response) {
                     if (response.ok) {
@@ -63333,7 +63333,7 @@ var Assessment = function (_Component) {
                     }
                 });
             } else {
-                fetch(_environment2.default.apiurl + ('/server/api/assessment.php?courseId=' + encodeURIComponent(this.state.courseId) + '&user=' + encodeURIComponent('teacher')), {
+                fetch(_environment2.default.apiurl + ('/assessment.php?courseId=' + encodeURIComponent(this.state.courseId) + '&user=' + encodeURIComponent('teacher')), {
                     method: 'GET'
                 }).then(function (response) {
                     if (response.ok) {
@@ -63389,7 +63389,7 @@ var Assessment = function (_Component) {
                     'content-type': 'multipart/form-data'
                 }
             };
-            fetch(_environment2.default.apiurl + '/server/api/submitAssignment.php', {
+            fetch(_environment2.default.apiurl + '/submitAssignment.php', {
                 method: 'POST',
                 body: formData,
                 config: config
@@ -63422,7 +63422,7 @@ var Assessment = function (_Component) {
                     'content-type': 'multipart/form-data'
                 }
             };
-            fetch(_environment2.default.apiurl + '/server/api/uploadAssignment.php', {
+            fetch(_environment2.default.apiurl + '/uploadAssignment.php', {
                 method: 'POST',
                 body: formData,
                 config: config
@@ -63789,7 +63789,7 @@ var EditProfile = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            fetch(_environment2.default.apiurl + ('/server/api/fetchuser.php?userId=' + encodeURIComponent(this.state.stuId) + '&type=' + encodeURIComponent('get')), {
+            fetch(_environment2.default.apiurl + ('/fetchuser.php?userId=' + encodeURIComponent(this.state.stuId) + '&type=' + encodeURIComponent('get')), {
                 method: 'GET'
             }).then(function (response) {
                 if (response.ok) {
@@ -63809,7 +63809,7 @@ var EditProfile = function (_Component) {
             var _this3 = this;
 
             e.preventDefault();
-            fetch(_environment2.default.apiurl + ('/server/api/fetchuser.php?type=' + encodeURIComponent('update')), {
+            fetch(_environment2.default.apiurl + ('/fetchuser.php?type=' + encodeURIComponent('update')), {
                 method: 'POST',
                 body: JSON.stringify({ stuId: this.state.stuId,
                     firstname: this.state.firstname,
@@ -63960,7 +63960,7 @@ var SelectTheme = function (_Component) {
         value: function handleSubmit(e) {
             var _this2 = this;
 
-            fetch(_environment2.default.apiurl + ('/server/api/fetchuser.php?type=' + encodeURIComponent('template')), {
+            fetch(_environment2.default.apiurl + ('/fetchuser.php?type=' + encodeURIComponent('template')), {
                 method: 'POST',
                 body: JSON.stringify({ stuId: this.state.stuId,
                     template: this.state.templateId })
