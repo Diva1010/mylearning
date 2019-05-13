@@ -1,5 +1,5 @@
  URL = {
   
-  apiurl:  '/public'
+  apiurl:  '/public/api'
 }
 export default URL

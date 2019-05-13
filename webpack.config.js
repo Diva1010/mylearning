@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry:  [`${SRC_DIR}/index.jsx`,`${SRC_DIR}/styles.css`],
   output: {
-    path: DIST_DIR,
+    path: __dirname,
     filename: 'bundle.js',
   },
   resolve: {
