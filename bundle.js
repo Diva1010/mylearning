@@ -1389,7 +1389,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 URL = {
 
-  apiurl: '/public'
+  apiurl: '/public/api'
 };
 exports.default = URL;
 
